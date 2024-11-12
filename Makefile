@@ -61,22 +61,22 @@ all: $(NAME)
 # Create the library from objects
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "libft.a creada con éxito."
+	@echo "libft.a successfully created."
 
 # Copila objects .c to files .o
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo "Compilando $<..."
+	@echo "Copiling $<..."
 
 # Delete files objects (.o)
 clean:
 	@rm -f $(OBJS)
-	@echo "Archivos objeto eliminados."
+	@echo "Objects files deleted."
 
 # Delete files objects and library
 fclean: clean
 	@rm -f $(NAME)
-	@echo "Limpieza completa, libft.a eliminada."
+	@echo "Clean completed, libft.a deleted."
 
 # Clean and recopila all
 re: fclean all
