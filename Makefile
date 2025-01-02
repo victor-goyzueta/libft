@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/15 15:39:31 by vgoyzuet          #+#    #+#              #
-#    Updated: 2024/10/16 16:15:09 by vgoyzuet         ###   ########.fr        #
+#    Created: 2024/11/18 22:28:58 by vgoyzuet          #+#    #+#              #
+#    Updated: 2024/12/27 21:51:37 by vgoyzuet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = libft.a
 
 # Copiling command and options
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 # List of files sources and its files objects
@@ -39,8 +39,8 @@ SRCS	=	ft_isalpha.c\
 	ft_strlcat.c\
 	ft_strnstr.c\
 	ft_atoi.c\
-	ft_strdup.c\
 	ft_calloc.c\
+	ft_strdup.c\
 	ft_substr.c\
 	ft_strjoin.c\
 	ft_strtrim.c\
@@ -51,9 +51,21 @@ SRCS	=	ft_isalpha.c\
 	ft_putchar_fd.c\
 	ft_putstr_fd.c\
 	ft_putendl_fd.c\
-	ft_putnbr_fd.c\
+	ft_putnbr_fd.c
 
+BNS_SRCS	= ft_lstnew_bonus.c\
+	ft_lstadd_front_bonus.c\
+	ft_lstsize_bonus.c\
+	ft_lstlast_bonus.c\
+	ft_lstadd_back_bonus.c\
+	ft_lstdelone_bonus.c\
+	ft_lstclear_bonus.c\
+	ft_lstiter_bonus.c\
+	ft_lstmap_bonus.c
+	
 OBJS = $(SRCS:.c=.o)
+
+BNS_OBJS = $(BNS_SRCS:.c=.o)
 
 # Copila all
 all: $(NAME)
@@ -68,10 +80,13 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "Copiling $<..."
 
+bonus: $(OBJS) $(BNS_OBJS) $(NAME)
+	@ar rcs $(NAME) $(BNS_OBJS)
+
 # Delete files objects (.o)
 clean:
-	@rm -f $(OBJS)
-	@echo "Objects files deleted."
+	@rm -f $(OBJS) $(BNS_OBJS)
+	@echo "Objetcs files deleted."
 
 # Delete files objects and library
 fclean: clean

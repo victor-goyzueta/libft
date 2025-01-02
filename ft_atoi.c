@@ -3,37 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 17:25:20 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2024/10/10 18:05:17 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2024/12/01 18:20:54 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2025/01/02 13:09:45 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
-	int			result;
-	int			sign;
-	const char	*p;
+	int	sign;
+	int	result;
 
-	result = 0;
 	sign = 1;
-	p = nptr;
-	while ((*p >= 9 && *p <= 13) || *p == 32)
-		p++;
-	if (*p == '-')
+	result = 0;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-')
 	{
 		sign = -1;
-		p++;
+		str++;
 	}
-	else if (*p == '+')
-		p++;
-	while (*p >= '0' && *p <= '9')
+	else if (*str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
 	{
-		result = result * 10 + (*p - '0');
-		p++;
+		result = result * 10 + *str - '0';
+		str++;
 	}
 	return (sign * result);
 }

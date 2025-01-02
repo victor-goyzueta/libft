@@ -3,26 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 14:29:04 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2024/10/14 14:02:31 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2024/12/23 17:03:56 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2024/12/26 00:29:55 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t num, size_t size)
 {
-	void	*ptr;
+	void	*buffer;
 
-	if (nmemb != 0 && size > SIZE_MAX / nmemb)
+	if (num != 0 && size > SIZE_MAX / num)
 		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
-	{
+	buffer = malloc(size * num);
+	if (!buffer)
 		return (NULL);
-	}
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	ft_bzero(buffer, num * size);
+	return (buffer);
 }

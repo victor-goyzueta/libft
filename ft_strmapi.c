@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:05:08 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2024/10/21 17:22:21 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2024/12/27 21:54:40 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2024/12/27 21:54:57 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-/*
-#include <stdio.h>
-
-char	ft_f(unsigned int i, char c)
-{
-	if (i == i / 2)
-		c = ft_toupper(c);
-	return (c);
-}
-
-int main()
-{
-	char const *s = "Hola mijitoS";
-	char		*resutl;
-
-	result = ft_strmapi(s, ft_f);
-	printf("%s", result);
-}
-*/

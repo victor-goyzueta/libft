@@ -3,44 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 14:27:46 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2024/10/03 16:15:25 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2024/11/13 02:39:57 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2025/01/02 12:53:16 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*d;
 
-	d = (unsigned char *)dest;
-	if (!dest && !src)
-		return (dest);
+	d = (unsigned char *)dst;
+	if (!dst && !src)
+		return (dst);
 	while (n--)
 		*d++ = *(const unsigned char *)src++;
-	return (dest);
+	return (dst);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int    main()
-{
-    char    s[] = "Hello, world!";
-    char    d[14] = {0};
-
-    printf("Before ft_memcpy:\n");
-    printf("Src: %s\n", s);
-    printf("Dest:%s\n\n", d);
-
-    ft_memcpy(d, s, strlen(s) + 1);
-    printf("After ft_memcpy:\n");
-    printf("Src: %s\n", s);
-    printf("Dest:%s\n", d);
-    return 0;
-}
-*/

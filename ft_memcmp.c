@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 21:29:34 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2024/10/03 16:16:26 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2024/11/15 16:53:31 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2025/01/02 13:06:40 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	if (str1 == NULL && str2 == NULL)
-		return (0);
-	if (n == 0)
+	p1 = (const unsigned char *)s1;
+	p2 = (const unsigned char *)s2;
+	if ((p1 == NULL && p2 == NULL) || n == 0)
 		return (0);
 	while (n--)
 	{
-		if (*str1 != *str2)
-			return (*str1 - *str2);
-		str1++;
-		str2++;
+		if (*p1 != *p2)
+			return (*p1 - *p2);
+		p1++;
+		p2++;
 	}
 	return (0);
 }

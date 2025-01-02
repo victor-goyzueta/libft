@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 21:18:21 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2024/10/15 21:35:11 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2024/11/12 20:21:56 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2025/01/02 13:02:35 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (NULL);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main()
-{
-	int	c = 'o';
-	const char	*s = "Hello, world!";
-	const char	*p = ft_strchr(s, c);
-
-	if (p)
-		printf("'%c' was found in the position: %ld.\n", c, p - s);
-	else
-		printf("'%c' was not found in the string.\n", c);
-	return 0;
-}
-*/

@@ -3,57 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 16:53:21 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2024/10/10 11:35:38 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2024/11/13 02:55:23 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2024/12/23 17:43:24 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
-
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
-	if (!dest && !src)
-		return (dest);
-	if (dest < src)
-	{
-		ft_memcpy(d, s, n);
-	}
+	if (!dst && !src)
+		return (dst);
+	if (src > dst)
+		ft_memcpy(dst, src, n);
 	else
 	{
-		d = d + n;
-		s = s + n;
+		src += n;
+		dst += n;
 		while (n--)
-		{
-			*(--d) = *(--s);
-		}
+			*(unsigned char *)(--dst) = *(const unsigned char *)(--src);
 	}
-	return (dest);
+	return (dst);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int    main()
-{
-    char    s[] = "Hello, world!";
-    char    d[14] = {0};
-
-    printf("Before ft_memmove:\n");
-    printf("Src: %s\n", s);
-    printf("Dest: %s\n", d);
-    
-    printf("After ft_memmove:\n");
-    ft_memmove(d, s, strlen(s) + 1);
-    printf("Src: %s\n", s);
-    printf("Dest: %s\n", d);
-    return 0;
-}
-*/

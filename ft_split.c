@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 17:57:10 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2024/10/20 17:48:26 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2024/12/27 21:45:27 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2024/12/27 21:46:31 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,29 +82,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (strs);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	char const	*s = "Name    Victor Jesus !Last, Goyzueta   ";
-	char		c = ' ';
-	char		**result = ft_split(s, c);
-	unsigned int	i = 0;
-
-	printf("String to split:\n%s\n\n", s);
-	printf("Substrings after ft_split:\n");
-	if (!result)
-		printf("Error allocating memory");
-	else
-	{
-		while(result[i] != NULL)
-		{
-			printf("%s\n", result[i]);
-			i++;
-		}
-		printf("\n\nComplete. '%d' substrings", i);
-	}
-	return 0;
-}
-*/

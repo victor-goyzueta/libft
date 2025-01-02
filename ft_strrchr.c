@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 11:52:28 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2024/10/10 11:31:52 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2024/11/12 21:17:22 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2025/01/02 13:03:18 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main()
-{
-	int	c = 'o';
-	const char	*s = "Hello, world!";
-	const char	*p = ft_strrchr(s, c);
-
-	if (p)
-		printf("The last '%c' was found in the position: %ld.\n", c, p - s);
-	else
-		printf("'%c' was not found in the string.\n", c);
-	return 0;
-}
-*/

@@ -3,40 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 20:53:05 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2024/10/10 11:32:58 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2024/11/13 02:04:43 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2024/12/23 17:43:41 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t			b;
-	unsigned char	*arr;
+	size_t			i;
+	unsigned char	*mem;
 
-	b = 0;
-	arr = (unsigned char *)s;
-	while (b < n)
+	i = 0;
+	mem = (unsigned char *)b;
+	while (i < len)
 	{
-		arr[b] = (unsigned char)c;
-		b++;
+		mem[i] = (unsigned char)c;
+		i++;
 	}
-	return (s);
+	return (mem);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-int	main()
-{
-	char	s[] = "Hello, this a test of ft_memset";
-
-	printf("Before ft_memset:%s\n", s);
-	ft_memset(s, '!', 10);
-	printf("After ft_memset:%s\n", s);
-	return 0;
-}
-*/

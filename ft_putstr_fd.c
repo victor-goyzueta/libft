@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoyzuet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgoyzuet <vgoyzuet@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 17:37:19 by vgoyzuet          #+#    #+#             */
-/*   Updated: 2024/10/21 17:40:05 by vgoyzuet         ###   ########.fr       */
+/*   Created: 2024/12/23 21:34:05 by vgoyzuet          #+#    #+#             */
+/*   Updated: 2024/12/26 00:33:34 by vgoyzuet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	i;
+	int	i;
 
 	if (!s)
 		return ;
