@@ -3,10 +3,10 @@ CYAN	=	\033[1;36m
 WHITE	=	\033[0m
 CLEAR	=	\r\033[K
 
-NAME = libft.a
+NAME	=	libft.a
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CC		=	cc
+CFLAGS	=	-Wall -Wextra -Werror
 
 SRCS	=	ft_isalpha.c			\
 			ft_isdigit.c			\
@@ -71,7 +71,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(CLEAR)$(CYAN)Clean completed, libft.a deleted."
+	@echo "$(CLEAR)$(CYAN)libft: Clean completed, libft.a deleted."
 
 re: fclean all
 
